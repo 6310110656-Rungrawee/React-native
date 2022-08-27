@@ -17,8 +17,6 @@ export default function Forecast(props) {
                     <Text style={styles.Des_text}>{props.description}</Text>
                 </View>
             </View>
-
-
         </View>
         <View style={styles.Info_Box_View}>
           <View style={styles.Info_Holder_Veiw}>
@@ -42,6 +40,7 @@ const styles = StyleSheet.create({
     Weather_Holder_View:{
       height:"80%",
       width:"90%",
+      backgroundColor: 'rgba(255, 255, 255, 0.3)',
       backgroundColor: 'rgba(255, 255, 255, 0.4)',
       borderRadius:15,
       alignItems:"center",
