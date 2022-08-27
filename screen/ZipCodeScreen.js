@@ -8,7 +8,7 @@ const availableZipItems = [
     { place: 'Trang', code: '92000' },
     { place: 'Chiangmai', code: '50000' },
     { place: 'Khonkaen', code: '40000' },
-    { place: 'Chonburi', code: '20000' },
+    { place: 'Chonburi', code: '10110' },
 ]
 const ZipItem = ({place, code, navigation}) => (
     <TouchableHighlight onPress = {() => {
