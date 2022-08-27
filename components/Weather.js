@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import {ImageBackground, Text, StyleSheet} from 'react-native'
-import Forecast from './Forecast';
+import React, { useState, useEffect } from 'react'
+import {ImageBackground, Text, StyleSheet, StatusBar} from 'react-native'
+import Forecast from './Forecast'
 
 export default function Weather(props) { 
   const [forecastInfo, setForecastInfo] = useState({
     main: 'loading...',
     describtion: 'loading...',
-    temp: 0
+    temp: 0,
+    pressure: 0,
+    humidity: 0
   })
 
   useEffect(() => {
@@ -18,7 +20,9 @@ export default function Weather(props) {
             setForecastInfo({
               main: json.weather[0].main,
               description: json.weather[0].description,
-              temp: json.main.temp
+              temp: json.main.temp,
+              pressure: json.main.pressure,
+              humidity: json.main.humidity
             });
         })
         .catch((error) => {
@@ -26,26 +30,22 @@ export default function Weather(props) {
         });
     }
   }, [props.zipCode])
-
-
-
+   
   return (
-    <ImageBackground source = {require('../bg.jpg')} style = {styles.backdrop}> 
+    <ImageBackground source = {require('../bg.jpg')} style = {styles.backdrop}>
       <Text>Zip Code is {props.zipCode}</Text>
       <Forecast {...forecastInfo} />
+      <StatusBar translucent={true} backgroundColor="#000"/>
     </ImageBackground>
   );
 }
-
+ 
 const styles = StyleSheet.create({
   backdrop: {
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
     height: '100%',
-  },
-  fonts: {
-    marginTop: 10,
-    fontSize : 18,
-} 
-}) ;
+    
+  }
+})
