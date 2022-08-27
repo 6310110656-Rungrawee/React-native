@@ -23,11 +23,11 @@ export default function Weather(props) {
             setForecastInfo({
               icon: json.weather[0].icon,
               main: json.weather[0].main,
-              name: json.name,
               description: json.weather[0].description,
               temp: json.main.temp,
               pressure: json.main.pressure,
-              humidity: json.main.humidity
+              humidity: json.main.humidity,
+              name: json.name
             });
         })
         .catch((error) => {
@@ -52,8 +52,6 @@ const styles = StyleSheet.create({
     width: Dev_Width
   },
   backdrop: {
-    flexDirection: 'column',
-    alignItems: 'center',
     width: '100%',
     height: '100%',
   },
