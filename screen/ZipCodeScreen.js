@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { FlatList, View, Text } from 'react-native'
+import { FlatList, View, Text, StyleSheet } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 const availableZipItems = [
@@ -32,7 +32,6 @@ export default function ZipCodeScreen() {
         />
     )
 }
-
 const styles = StyleSheet.create ({
     zipItem: {
         flex: 1,
@@ -45,4 +44,4 @@ const styles = StyleSheet.create ({
     zipCode: {
         flex: 1,
     }
-}) 
+})
